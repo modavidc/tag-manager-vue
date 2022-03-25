@@ -1,4 +1,4 @@
-# tag-manager-vue-new
+# tag-manager-vue
 
 ## Project setup
 ```
