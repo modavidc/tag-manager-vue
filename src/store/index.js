@@ -1,9 +1,9 @@
 import { createStore } from "vuex";
 
+import tag from "./modules/tag";
+
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    tag,
+  },
 });

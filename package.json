@@ -11,8 +11,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
+    "vue-axios": "^3.4.1",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
@@ -27,12 +31,16 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/test-utils": "^2.0.0-0",
+    "autoprefixer": "^10.4.4",
     "chai": "^4.2.0",
     "cypress": "^8.3.0",
+    "dotenv-webpack": "^7.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
-    "prettier": "^2.4.1"
+    "postcss": "^8.4.12",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^3.0.23"
   }
 }
