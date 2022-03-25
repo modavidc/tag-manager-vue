@@ -1,5 +1,27 @@
-# tag-manager-vue
- 
+# 🏷️ Tag Manager Vue
+
+Tag Manager Vue is an app that allows you to manage tags. Ideal for all those who need to implement a labeling system within their organization.
+
+## 🔨 Technologies
+
+* Vue 3.
+
+## 🚀 Run
+
+### Install
+
+1. Clone the repository
+
+`git clone https://github.com/modavidc/tag-manager-vue.git`
+
+2. Switch to the repo folder
+
+`cd tag-manager-vue`
+
+3. Copy the example env file and make the required configuration changes in the .env file
+
+`cp .env.example .env`
+
 ## Project setup
 ```
 npm install
@@ -30,7 +52,26 @@ npm run test:e2e
 npm run lint
 ```
 
-References:
+## 👤 Author
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**Moisés Cedeño**
+
+- Email: [moisesdavidaaron@gmail.com](mailto:moisesdavidaaron@gmail.com)
+- Github: [@modavidc](https://github.com/modavidc)
+- Twitter: [@modavidc](https://twitter.com/modavidc)
+
+## 🤝 Contributors
+
+<a href = "https://github.com/modavidc">
+  <img src = "https://contrib.rocks/image?repo=modavidc/tag-manager-vue"/>
+</a>
+
+## 📝 License
+
+Copyright © 2022 [modavidc](https://github.com/modavidc).<br />
+This project is [MIT](https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE) licensed.
+
+---
+
+_Made with [contributors-img](https://contrib.rocks).\
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
