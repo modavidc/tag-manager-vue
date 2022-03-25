@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome Tag Manager Vue" />
+    <HelloWorld msg="Welcome Tag Manager Vue " />
   </div>
 </template>
 
