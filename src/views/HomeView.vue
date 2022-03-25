@@ -1,21 +1,24 @@
 <template>
-  <div class="bg-gray-200 py-10">
+  <div style="height: 100vh" class="bg-gray-200 py-10">
     <div class="max-w-lg bg-white mx-auto p-5 shadow">
-      <ul
+      <div
         v-if="!status"
         class="list-none p-4 mb-4 bg-red-100 text-red-500 rounded"
-      >
-        <li>{{ errors }}</li>
-      </ul>
+        v-html="errors"
+      />
 
       <div class="flex justify-between">
         <a class="flex items-center mb-5 text-purple-500 font-bold" href="/">
-          <font-awesome-icon icon="user-secret" />
-          <span class="ml-1">Tag Manager</span>
+          <tag-icon />
+          <span class="ml-1">Tag Manager Vue</span>
         </a>
 
-        <a class="flex items-center mb-5 text-blue-500" href="/">
-          <i class="fas fa-arrow-left"></i>
+        <a
+          v-show="editing"
+          class="flex items-center mb-5 text-blue-500"
+          href="/"
+        >
+          <arrow-left-icon />
           <span class="ml-1">Volver</span>
         </a>
       </div>
@@ -29,24 +32,32 @@
           placeholder="Tag 1"
         />
         <button
-          v-if="!editing"
           class="rounded-r px-8 bg-blue-500 text-white outline-none"
+          v-if="!editing"
+          :disabled="loading"
           @click="addTag(tagName)"
         >
-          Add
+          <is-loading v-show="loading" />
+          <span v-show="!loading">Add</span>
         </button>
         <button
+          class="rounded-r px-8 bg-blue-500 text-white outline-none"
           v-else
-          class="rounded-r px-8 bg-purple-500 text-white outline-none"
+          :disabled="loading"
           @click="updateTag()"
         >
-          Update
+          <is-loading v-show="loading" />
+          <span v-show="!loading">Update</span>
         </button>
       </div>
 
       <h4 class="text-lg text-center font-bold mb-6">Tags {{ tags.lenght }}</h4>
 
-      <table class="table-auto">
+      <div class="flex justify-center">
+        <is-loading v-show="loading" />
+      </div>
+
+      <table v-show="!loading" class="table-auto">
         <thead>
           <tr>
             <th width="35%">Tag</th>
@@ -64,14 +75,14 @@
                   class="flex gap-1 items-center p-2 max-h-8 rounded bg-blue-500 text-white"
                   @click="editTag(tag.id, tag.name)"
                 >
-                  <i class="fas fa-pencil"></i>
+                  <pencil-icon style="height: 1rem; width: 1rem" />
                   <span>Edit</span>
                 </button>
                 <button
                   class="flex gap-1 items-center p-2 max-h-8 rounded bg-red-500 text-white"
                   @click="deleteTag(tag.id)"
                 >
-                  <i class="fas fa-trash"></i>
+                  <trash-icon style="height: 1rem; width: 1rem" />
                   <span>Remove</span>
                 </button>
               </div>
@@ -89,11 +100,20 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import IsLoading from "@/components/IsLoading.vue";
+import TagIcon from "@/components/Icons/TagIcon.vue";
+import ArrowLeftIcon from "@/components/Icons/ArrowLeftIcon.vue";
+import PencilIcon from "@/components/Icons/PencilIcon.vue";
+import TrashIcon from "@/components/Icons/TrashIcon.vue";
 
 export default {
   name: "HomeView",
   components: {
-    // Tags,
+    IsLoading,
+    TagIcon,
+    ArrowLeftIcon,
+    PencilIcon,
+    TrashIcon,
   },
   data() {
     return {
@@ -102,7 +122,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["status", "errors", "tags"]),
+    ...mapGetters(["loading", "status", "errors", "tags"]),
   },
   created() {
     this.$store.dispatch("get");
@@ -113,6 +133,9 @@ export default {
       this.add(name);
 
       this.get();
+
+      this.editing = false;
+      this.tagName = "";
     },
     editTag(id, name) {
       this.editing = true;
