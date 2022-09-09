@@ -12,11 +12,11 @@ Tag Manager Vue is an app that allows you to manage tags. Ideal for all those wh
 
 1. Clone the repository
 
-`git clone https://github.com/modavidc/tagmanager-vue-challenge.git`
+`git clone https://github.com/modavidc/tag-manager-vue-challenge.git`
 
 2. Switch to the repo folder
 
-`cd tagmanager-vue-challenge`
+`cd tag-manager-vue-challenge`
 
 3. Copy the example env file and make the required configuration changes in the .env file
 
@@ -63,7 +63,7 @@ npm run lint
 ## 🤝 Contributors
 
 <a href = "https://github.com/modavidc">
-  <img src = "https://contrib.rocks/image?repo=modavidc/tagmanager-vue-challenge"/>
+  <img src = "https://contrib.rocks/image?repo=modavidc/tag-manager-vue-challenge"/>
 </a>
 
 ## 📝 License
